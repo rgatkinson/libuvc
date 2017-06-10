@@ -16,15 +16,17 @@ To build, you can just run these shell commands:
     cmake ..
     make && sudo make install
 
-[https://int80k.com/libuvc/doc/ reads instead:
+Instructions from https://int80k.com/libuvc/doc/ read instead:
 
-	$ git clone https://github.com/ktossell/libuvc.git
-	$ cd libuvc
-	$ mkdir build
-	$ cd build
-	$ cmake -DCMAKE_BUILD_TYPE=Release ..
-	$ make && make install
-]
+	git clone https://github.com/ktossell/libuvc.git
+	cd libuvc
+	mkdir build
+	cd build
+	cmake -DCMAKE_BUILD_TYPE=Release ..
+	make && make install
+
+In the final analysis, we used the following line, on Windows Linux, to make the configuration
+	cmake -DCMAKE_BUILD_TYPE=Release -DLIBUSB_INCLUDE_DIRS=/usr/include/libusb-1.0 ..
 
 and you're set! If you want to change the build configuration, you can edit `CMakeCache.txt`
 in the build directory, or use a CMake GUI to make the desired changes.
